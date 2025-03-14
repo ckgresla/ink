@@ -1,0 +1,21 @@
+{
+  "name": "ink",
+  "displayName": "ink",
+  "description": "A tasteful theme",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "light ink",
+        "uiTheme": "vs",
+        "path": "./themes/light-ink-color-theme.json"
+      }
+    ]
+  }
+}
