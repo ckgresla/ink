@@ -81,13 +81,13 @@
 
     // accents
     // TODO: maybe delete these two, double underlines AND squiggles seems kind of redundant...
-    // "editorError.border": "#ff4a4a",
+    // "editorError.border": "#C55151",
     // "editorWarning.border": "#ffcf4a",
-    "editorError.foreground": "#ff4a4a",
+    "editorError.foreground": "#C55151",
     "editorWarning.foreground": "#ffcf4a",
-    "editorGutter.deletedBackground": "#ff4a4a",
-    "editorGutter.modifiedBackground": "#4a8fff",
-    "editorGutter.addedBackground": "#518571",
+    "editorGutter.deletedBackground": "#C55151",
+    "editorGutter.modifiedBackground": "#7098d4",
+    "editorGutter.addedBackground": "#59AA87",
     "editor.findMatchHighlightBackground": "#ffcf4a80",
 
     "searchEditor.textInputBorder": "#000000",
@@ -116,8 +116,8 @@
     "minimapGutter.deletedBackground": "#000000",
     "minimap.warningHighlight": "#8d8d8d",
     "minimap.errorHighlight": "#b3b3b3",
-    "minimapGutter.addedBackground": "#518571",
-    "minimapGutter.modifiedBackground": "#4a8fff",
+    "minimapGutter.addedBackground": "#59AA87",
+    "minimapGutter.modifiedBackground": "#7098d4",
     "minimap.findMatchHighlight": "#ffcf4a80",
     "minimap.selectionHighlight": "#000000",
     "minimapSlider.activeBackground": "#00000050",
@@ -149,13 +149,12 @@
     "tab.activeBorder": "#ffffff",
     "tab.activeBackground": "#ffffff",
 
-    // TODO: these 4 foreground/background settings mess up searching for files in the shif+shift menu, how to resolve?
     "list.activeSelectionForeground": "#ffffff",
     "list.activeSelectionBackground": "#000000",
     "list.focusForeground": "#ffffff",
     "list.focusBackground": "#000000",
+    "list.highlightForeground": "#c9cbff",
     "list.deemphasizedForeground": "#000000",
-    "list.highlightForeground": "#000000",
     "list.filterMatchBorder": "#000000",
     "list.hoverForeground": "#000000",
     "list.inactiveSelectionForeground": "#000000",
@@ -420,19 +419,20 @@
     "terminal.ansiBlue": "#7098d4",
     "terminal.ansiBrightBlack": "#000000",
     "terminal.ansiBrightBlue": "#80a8e4",
-    "terminal.ansiBrightCyan": "#6671d8",
+    "terminal.ansiBrightCyan": "#66c1d8",
     "terminal.ansiBrightGreen": "#76c3a5",
     "terminal.ansiBrightMagenta": "#c2a0ca",
     "terminal.ansiBrightRed": "#f48484",
     "terminal.ansiBrightWhite": "#eeeeee",
     "terminal.ansiBrightYellow": "#f2d98e",
-    "terminal.ansiCyan": "#6ab8c0",
-    "terminal.ansiGreen": "#7a83d0",
+    "terminal.ansiCyan": "#7acdd0",
+    "terminal.ansiGreen": "#6ab8c0",
     "terminal.ansiMagenta": "#b290ba",
     "terminal.ansiRed": "#e47474",
     "terminal.ansiWhite": "#ffffff",
     "terminal.ansiYellow": "#e2c97e",
     "terminal.selectionBackground": "#c9cbff57",
+    "terminal.findMatchBackground": "#ffcf4a80",
 
     "icon.foreground": "#000000",
 
@@ -543,118 +543,67 @@
   },
   "tokenColors": [
     {
-      "name": "comment",
-      "scope": ["comment", "comment.line.double-slash"],
+      "scope": [
+        "markup.deleted",
+        "meta.diff.header.from-file",
+        "punctuation.definition.deleted"
+      ],
       "settings": {
-        "fontStyle": "italic underline",
-        "foreground": "#8b8b8b"
+        "foreground": "#b31d28"
       }
     },
     {
-      "name": "tags and storage",
       "scope": [
-        "entity.name.tag",
-        "storage.modifier",
-        "storage.type.class",
-        "support.type.property-name",
-        "punctuation.definition.template-expression",
-        "variable.other.readwrite",
-        "variable.other.object"
+        "markup.inserted",
+        "meta.diff.header.to-file",
+        "punctuation.definition.inserted"
       ],
+      "settings": {
+        "foreground": "#22863a"
+      }
+    },
+    {
+      "scope": [
+        "markup.changed",
+        "punctuation.definition.changed"
+      ],
+      "settings": {
+        "foreground": "#005cc5"
+      }
+    },
+    {
+      "scope": [
+        "markup.ignored",
+        "markup.untracked"
+      ],
+      "settings": {
+        "foreground": "#f6f8fa",
+      }
+    },
+    {
+      "scope": "meta.diff.range",
+      "settings": {
+        "foreground": "#6f42c1",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "meta.diff.header",
+      "settings": {
+        "foreground": "#005cc5"
+      }
+    },
+    {
+      "scope": "meta.separator",
       "settings": {
         "fontStyle": "bold",
-        "foreground": "#000000"
+        "foreground": "#005cc5"
       }
     },
     {
-      "name": "names",
-      "scope": ["entity.other.attribute-name"],
+      "scope": "meta.output",
       "settings": {
-        "fontStyle": "italic",
-        "foreground": "#000000"
-      }
-    },
-    {
-      "name": "types",
-      "scope": [
-        "support.type.primitive",
-        "entity.name.type",
-        "keyword.control.flow"
-      ],
-      "settings": {
-        "fontStyle": "italic underline",
-        "foreground": "#000000"
-      }
-    },
-    {
-      "name": "functions",
-      "scope": ["entity.name.function", "storage.type"],
-      "settings": {
-        "fontStyle": "italic bold",
-        "foreground": "#000000"
-      }
-    },
-    {
-      "name": "condifionals and cycles",
-      "scope": ["keyword.control.conditional"],
-      "settings": {
-        "fontStyle": "italic",
-        "foreground": "#000000"
-      }
-    },
-    {
-      "name": "symbols",
-      "scope": [
-        "keyword.operator.assignment",
-        "storage.type.function.arrow",
-        "keyword.operator.logical",
-        "keyword.operator.comparison",
-        "punctuation.separator.key-value",
-        "keyword.operator.type.annotation",
-        "punctuation.accessor",
-        "punctuation.separator.comma",
-        "punctuation.definition.string",
-        "punctuation.terminator.statement",
-        "punctuation.definition.typeparameters"
-      ],
-      "settings": {
-        "fontStyle": "bold",
-        "foreground": "#000000"
-      }
-    },
-    {
-      "name": "gray symbols",
-      "scope": [
-        "punctuation.separator.array",
-        "punctuation.separator.dictionary"
-      ],
-      "settings": {
-        "fontStyle": "bold",
-        "foreground": "#8b8b8b"
-      }
-    },
-    {
-      "name": "exports",
-      "scope": ["keyword.control.export", "keyword.control.import"],
-      "settings": {
-        "fontStyle": "bold italic",
-        "foreground": "#000000"
-      }
-    },
-    {
-      "name": "quotes",
-      "scope": ["string.quoted.single", "string.quoted.double"],
-      "settings": {
-        "fontStyle": "",
-        "foreground": "#525252"
-      }
-    },
-    {
-      "name": "properties",
-      "scope": ["variable.other.object.property"],
-      "settings": {
-        "fontStyle": "italic",
-        "foreground": "#525252"
+        "foreground": "#005cc5"
       }
     }
   ]
