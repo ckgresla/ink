@@ -30,7 +30,7 @@
     "editorSuggestWidget.highlightForeground": "#000000",
     "editorRuler.foreground": "#000000",
     "editorUnnecessaryCode.border": "#000000",
-    "editor.wordHighlightBorder": "#000000",
+    // "editor.wordHighlightBorder": "#000000",  // TODO: potentially turn this back on -- these borders make magit diffs convoluted, but are nice when looking at related tokens in code, what do?
     "editor.wordHighlightStrongBorder": "#000000",
     "editor.foldBackground": "#ffffff",
     "editorGutter.foldingControlForeground": "#000000",
@@ -80,9 +80,6 @@
     "editorSuggestWidget.background": "#ffffff",
 
     // accents
-    // TODO: maybe delete these two, double underlines AND squiggles seems kind of redundant...
-    // "editorError.border": "#C55151",
-    // "editorWarning.border": "#ffcf4a",
     "editorError.foreground": "#C55151",
     "editorWarning.foreground": "#ffcf4a",
     "editorGutter.deletedBackground": "#C55151",
@@ -607,7 +604,9 @@
         "punctuation.separator.comma",
         "punctuation.definition.string",
         "punctuation.terminator.statement",
-        "punctuation.definition.typeparameters"
+        "punctuation.definition.typeparameters",
+        "magit.header",
+        "keyword.operator.new.section.header.magit"
       ],
       "settings": {
         "fontStyle": "bold",
@@ -679,6 +678,26 @@
         "foreground": "#005cc5"
       }
     },
+    {
+      "name": "Special comment keywords",
+      "scope": [
+        "keyword.codetag.notation",
+        "keyword.other.todo",
+        "keyword.other.fixme",
+        "keyword.other.hack",
+        "keyword.other.note",
+        "keyword.other.warning",
+        "keyword.other.important",
+        "comment.line.todo.documentation",
+        "comment.line.fixme.documentation",
+        "markup.todo",
+        "markup.fixme"
+      ],
+      "settings": {
+        "fontStyle": "italic bold underline",
+        "foreground": "#000000"
+      }
+    },     
     {
       "scope": [
         "markup.ignored",
